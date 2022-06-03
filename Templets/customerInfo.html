@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% block title %}Customer Details{% endblock title %} {% block bg %}customer{% endblock bg %} {% block cssFile %}allCustomer{% endblock cssFile %} {% block extraCss %}
+<link rel="stylesheet" href="/static/home.css">{% endblock extraCss %} {% block body %}
+
+
+
+<div class="container">
+    <div class="data">
+        <div class="transfer">
+            <form action="transferMoney" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="aid" value="{{data.accountNo}}">
+
+                <td> <input type="submit" value="Transfer Money" class="myBtn btn btn-danger">
+                    <br>
+                    <a href="transferMoney"></a>
+                </td>
+            </form>
+        </div>
+        <p class="detail">All DETAILS about {{data.name}}</p>
+
+        <table class="table table-hover" style="background-color: rgba(247, 239, 239, 0.3);">
+
+            <tbody>
+
+                <tr class="text-dark info">
+                    <td>ID</td>
+                    <td>{{data.id}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Name</td>
+                    <td>{{data.name}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Email ID</td>
+                    <td>{{data.email}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Account No</td>
+                    <td>{{data.accountNo}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Current Balance</td>
+                    <td>{{data.currentBalence}} Rs.</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Phone No</td>
+                    <td>{{data.phoneNo}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Gender</td>
+                    <td>{{data.gender}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Birth Date</td>
+                    <td>{{data.birthDate}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>Aadhar No</td>
+                    <td>{{data.aadharNo}}</td>
+                </tr>
+                <tr class="text-dark info">
+                    <td>
+                        Address
+                    </td>
+                    <td>{{data.address}} ,&nbsp;{{data.city}},&nbsp;{{data.state}},&nbsp;{{data.zip}}</td>
+                </tr>
+
+        </table>
+    </div>
+</div>
+
+{% endblock body %}

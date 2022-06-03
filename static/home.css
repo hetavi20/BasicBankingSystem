@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+.homePage {
+    background: linear-gradient(to right, rgb(39, 176, 214, .5), rgb(39, 176, 214, .5)), url(https://img.freepik.com/free-vector/people-with-smartphones-using-mobile-banking-app_74855-5917.jpg?t=st=1654236470~exp=1654237070~hmac=71df56cfae14fb4081da7968cd101ce83a45e4e0df3697d2b5d9ba50fb3cd728&w=1060);
+    background-size: cover;
+    min-height: 950px;
+    border-radius: 0 50% 0% 70%;
+}
+
+.logo {
+    font-size: 35px !important;
+    padding-left: 60px !important;
+    font-weight: bolder;
+    color: black !important;
+}
+
+.navbar-nav {
+    padding: 20px 60px !important;
+    margin-left: auto !important;
+}
+
+.nav-link {
+    font-size: 25px !important;
+    /* font-weight: 600 !important; */
+    color: white !important;
+}
+
+.navbar {
+    background-color: rgba(81, 78, 78, 0.5) !important;
+}
+
+.bodyPart {
+    /* padding-left: 10%; */
+}
+
+.welcomeMessage {
+    padding-top: 10%;
+    font-size: 70px;
+    text-align: left;
+    color: black;
+    text-shadow: 4px 4px rgba(51, 40, 208, 0.4);
+    font-weight: bold;
+}
+
+.button-ok {
+    margin: 0px 100px;
+}
+
+a {
+    color: black !important;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white !important;
+}
+
+.bt {
+    font-size: 30px !important;
+    padding: 0px 30px !important;
+    min-width: 400px;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.ph {
+    padding: 25px 0px;
+}

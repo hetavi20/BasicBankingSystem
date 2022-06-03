@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block title %}Customer Page{% endblock title %} {% block bg %}customer{% endblock bg %} {% block cssFile %}allCustomer{% endblock cssFile %} {% block extraCss %}
+<link rel="stylesheet" href="/static/home.css">{% endblock extraCss %} {% block body %}
+
+
+<div class="container">
+    <div class="data">
+
+        <p class="detail">DETAILS OF ALL CUSTOMERS</p>
+
+        <table class="table table-hover" style="background-color: rgba(247, 239, 239, 0.3);">
+            <thead class="thead">
+                <tr style="color: black;">
+                    <th>Sr.No</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Account No</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customer %}
+                <tr class="text-dark info">
+                    <form action="customerInfo" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="aid" value="{{customer.accountNo}}">
+                        <td> <input type="submit" value="{{customer.id}}" class="card-btn myText"></td>
+                        <td> <input type="submit" value="{{customer.name}}" class="card-btn myText">
+                            <br>
+                            <a href="customerInfo"></a>
+                        </td>
+
+                        <td>
+                            <input type="submit" value="{{customer.accountNo}}" class="card-btn myText">
+                        </td>
+                    </form>
+                </tr>
+
+
+                {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock body %}
