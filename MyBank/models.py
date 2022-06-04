@@ -1,4 +1,5 @@
 import email
+from tkinter import CASCADE
 from django.db import models
 
 # Create your models here.
@@ -20,3 +21,11 @@ class customerDetail(models.Model):
     currentBalence=models.IntegerField(default=0)
     def __str__(Self):
         return Self.name
+
+
+class transaction(models.Model):
+    amount=models.IntegerField(default=0)
+    toTransfer=models.CharField(max_length=50,default='')
+    fromTransfer=models.ForeignKey(customerDetail,on_delete=models.CASCADE)
+    def __str__(Self):
+        return Self.toTransfer

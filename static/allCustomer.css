@@ -46,7 +46,8 @@ a:hover {
 }
 
 .moneyForm {
-    padding-top: 10% !important;
+    padding-top: 5% !important;
+    padding-bottom: 5% !important;
 }
 
 .moneyTable {
@@ -100,4 +101,13 @@ a:hover {
 .myInfo {
     font-size: 20px;
     text-align: left;
+}
+
+.myName {
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.headPart {
+    font-size: 20px !important;
 }

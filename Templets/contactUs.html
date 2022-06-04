@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %}Customer Page{% endblock title %} {% block bg %}customer{% endblock bg %} {% block cssFile %}allCustomer{% endblock cssFile %} {% block extraCss %}
+{% extends 'base.html' %} {% block title %}Contact Us{% endblock title %} {% block bg %}customer{% endblock bg %} {% block cssFile %}allCustomer{% endblock cssFile %} {% block extraCss %}
 <link rel="stylesheet" href="/static/home.css">{% endblock extraCss %} {% block body %}
 <div class="contactUS">
     <section class="contact">
@@ -33,7 +33,10 @@
                                     <label for="exampleInputPassword1" class="form-label">Phone Number</label>
                                     <input type="password" class="form-control" id="exampleInputPassword1">
                                 </div>
-
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Message</label>
+                                    <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+                                </div>
                                 <button type="submit" class="btn btn-ok btn-primary">Send</button>
                             </form>
                         </div>

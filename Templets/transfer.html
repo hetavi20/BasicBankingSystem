@@ -5,14 +5,18 @@
 
 
 <div class="moneyForm container">
+    <div class="container myName">
+        <input type="submit" value="Transfer Money from {{myUser.name}}'s Account" class="myBtn btn btn-info">
+    </div>
     <form action="transferAmount" method="post">
         {% csrf_token %}
-        
+
         <table class="table table-hover moneyTable">
             <tr>
                 <td class="thead">Transfer To:</td>
-                <td> <select class="myText" name="aid" id="">
-                <option value="Select Customer">Select Customer</option>
+                <input type="hidden" name="transferBy" value="{{myUser.name}}">
+                <td> <select class="myText" name="transferTo" id="">
+                <option value="-1" id="user" class="required">Select Customer</option>
                 {% for user in customer %}
                 <option value="{{user.name}}">{{user.name}}</option>   
                 {% endfor %}
@@ -20,13 +24,17 @@
             </tr>
             <tr>
                 <td class="thead">Amount:</td>
-                <td> <input type="text" class="myText" name="amount" placeholder="Enter amount you want to transfer  in Rupees"></td>
+                <td>
+                    <input type="text" id="amount" class="myText" name="amount" placeholder="Enter amount you want to transfer  in Rupees" onfocusout="checkAmount();"></td>
             </tr>
+
             <tr>
 
-                <td colspan="2"> <input type="submit" value="Transfer Money" class=" btn btn-danger moneyBtn">
+                <td colspan=" 2 ">
+                    <!-- <input type="submit " value="Transfer Money " class=" btn btn-danger moneyBtn "> -->
                     <br>
-                    <a href="transferAmount"></a>
+                    <input type="submit" value="Transfer Money" class="btn btn-danger moneyBtn">
+                    <a href="transferAmount "> </a>
                 </td>
             </tr>
         </table>

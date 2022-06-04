@@ -1,27 +1,27 @@
-{% extends 'base.html' %} {% block title %}Transfer Money{% endblock title %} {% block bg %}customer{% endblock bg %} {% block cssFile %}allCustomer{% endblock cssFile %} {% block extraCss %}
+{% extends 'base.html' %} {% block title %}See All Transactions{% endblock title %} {% block bg %}customer{% endblock bg %} {% block cssFile %}allCustomer{% endblock cssFile %} {% block extraCss %}
 <link rel="stylesheet" href="/static/home.css">{% endblock extraCss %} {% block body %}
 
 
 <div class="moneyForm container">
-    <form action="transferAmount" method="post">
-        {% csrf_token %}
-        <input type="hidden" name="aid" value="{{data.name}}">
-        <table class="table table-hover moneyTable">
-            <tr>
-                <td class="thead">Amount:</td>
-                <td> <input type="text" class="myText" name="amount" placeholder="Enter amount you want to transfer to {{data.name}} in Rupees"></td>
+    <div class="container text-center ">
+        <h1 class="contact-us">All Transactions</h1>
+    </div>
+    <table class="table table-hover" style="background-color: rgba(247, 239, 239, 0.3);">
+        <thead class="headPart">
+            <th class="text-dark headPart">Transaction ID</th>
+            <th class="text-dark headPart">Transferred From</th>
+            <th class="text-dark headPart">Transferred To</th>
+            <th class="text-dark headPart">Amount</th>
+        </thead>
+        <tbody>
+            {% for data in transactions %}
+            <tr class="text-dark info">
+                <td>{{data.id}}</td>
+                <td>{{data.fromTransfer}}</td>
+                <td>{{data.toTransfer}}</td>
+                <td>{{data.amount}}&nbsp; Rs.</td>
             </tr>
-            <tr>
-
-                <td colspan="2"> <input type="submit" value="Transfer Money" class=" btn btn-danger moneyBtn">
-                    <br>
-                    <a href="transferAmount"></a>
-                </td>
-            </tr>
-        </table>
-
-
-
-    </form>
+            {% endfor %}
+    </table>
 </div>
 {% endblock body %}

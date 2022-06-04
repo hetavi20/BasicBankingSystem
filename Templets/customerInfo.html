@@ -6,13 +6,13 @@
 <div class="container">
     <div class="data">
         <div class="transfer">
-            <form action="transferMoney" method="post">
+            <form action="transfer" method="post">
                 {% csrf_token %}
-                <input type="hidden" name="aid" value="{{data.accountNo}}">
+                <input type="hidden" name="aid" value="{{data.name}}">
 
                 <td> <input type="submit" value="Transfer Money" class="myBtn btn btn-danger">
                     <br>
-                    <a href="transferMoney"></a>
+                    <a href="transfer"></a>
                 </td>
             </form>
         </div>
